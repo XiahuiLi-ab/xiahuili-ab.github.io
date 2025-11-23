@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Xiahui Li - Academic Portfolio</title>
+=======
+    <title>Your Name - Academic Portfolio</title>
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -187,6 +191,7 @@
             aspect-ratio: 3/4;
             background: linear-gradient(135deg, #e5e5e5 0%, #d4d4d4 100%);
             border-radius: 2px;
+<<<<<<< HEAD
             overflow: hidden;
             position: relative;
         }
@@ -196,6 +201,25 @@
             height: 100%;
             object-fit: cover;
             display: block;
+=======
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.05) 100%);
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
         }
 
         .about-content h1 {
@@ -209,6 +233,7 @@
             font-weight: 300;
         }
 
+<<<<<<< HEAD
         /* Social Icons */
         .social-icons {
             margin-top: 2rem;
@@ -240,6 +265,27 @@
         .social-icons svg {
             width: 20px;
             height: 20px;
+=======
+        .contact-info {
+            margin-top: 2rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
         }
 
         /* Publications */
@@ -268,6 +314,7 @@
             border-radius: 2px;
             cursor: pointer;
             transition: all 0.3s ease;
+<<<<<<< HEAD
             overflow: hidden;
             position: relative;
             display: block;
@@ -278,6 +325,15 @@
             height: 100%;
             object-fit: cover;
             display: block;
+=======
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            overflow: hidden;
+            position: relative;
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
         }
 
         .paper-image::before {
@@ -289,7 +345,10 @@
             bottom: 0;
             background: rgba(0, 0, 0, 0);
             transition: background 0.3s ease;
+<<<<<<< HEAD
             z-index: 1;
+=======
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
         }
 
         .paper-image:hover::before {
@@ -561,6 +620,7 @@
         <!-- About Section -->
         <section id="about">
             <div class="profile-image">
+<<<<<<< HEAD
                 <img src="figures/body.jpg" alt="Xiahui Li">
             </div>
             <div class="about-content">
@@ -596,6 +656,27 @@
                             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
                     </a>
+=======
+                <span>Your Photo Here</span>
+            </div>
+            <div class="about-content">
+                <h1>Your Name</h1>
+                <p class="title">Assistant Professor of [Your Field] | [Your University]</p>
+                <p>
+                    Welcome to my academic website. I am a researcher specializing in [your research area]. 
+                    My work focuses on [brief description of your research interests and methodology]. 
+                    I am passionate about [your academic passions] and committed to [your academic goals].
+                </p>
+                <p>
+                    My research has been published in [mention key venues or achievements]. 
+                    I received my PhD from [Your University] in [Year], where I worked on [dissertation topic].
+                </p>
+                <div class="contact-info">
+                    <a href="mailto:your.email@university.edu">✉ your.email@university.edu</a>
+                    <a href="#" target="_blank">🔗 Google Scholar</a>
+                    <a href="#" target="_blank">🔗 LinkedIn</a>
+                    <a href="#" target="_blank">🔗 GitHub</a>
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                 </div>
             </div>
         </section>
@@ -606,6 +687,7 @@
 
             <!-- Published Papers -->
             <div class="paper">
+<<<<<<< HEAD
                 <a href="https://doi.org/10.1016/j.epidem.2025.100855" target="_blank" class="paper-image">
                     <img src="figures/Review figure.jpg" alt="Review paper figure">
                 </a>
@@ -703,6 +785,78 @@
                     <div class="paper-links">
                         <a href="https://github.com/XiahuiLi-ab/infectious-disease-modelling-with-multiple-datasources.git" target="_blank">arXiv</a>
                         <a href="https://github.com/XiahuiLi-ab/infectious-disease-modelling-with-multiple-datasources.git" target="_blank">Code</a>
+=======
+                <a href="#" target="_blank" class="paper-image">
+                    <span>Paper Figure</span>
+                </a>
+                <div class="paper-content">
+                    <h4>Title of Your First Published Paper: A Comprehensive Study</h4>
+                    <p class="paper-authors">
+                        <strong>Your Name</strong>, Co-Author Name, Another Author
+                    </p>
+                    <p class="paper-venue">
+                        Conference/Journal Name (Abbreviated), Year
+                    </p>
+                    <p class="paper-description">
+                        Brief description of the paper's contribution and main findings. 
+                        Explain the key innovation and its impact on the field.
+                    </p>
+                    <div class="paper-links">
+                        <a href="#" target="_blank">PDF</a>
+                        <a href="#" target="_blank">Code</a>
+                        <a href="#" target="_blank">arXiv</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper">
+                <a href="#" target="_blank" class="paper-image">
+                    <span>Paper Figure</span>
+                </a>
+                <div class="paper-content">
+                    <h4>Another Important Research Paper on Advanced Topics</h4>
+                    <p class="paper-authors">
+                        Co-Author Name, <strong>Your Name</strong>, Third Author
+                    </p>
+                    <p class="paper-venue">
+                        Top-Tier Conference (Abbreviated), Year
+                    </p>
+                    <p class="paper-description">
+                        Description of this paper's contributions, methodology, and significance 
+                        to the research community. Highlight any notable achievements or citations.
+                    </p>
+                    <div class="paper-links">
+                        <a href="#" target="_blank">PDF</a>
+                        <a href="#" target="_blank">Slides</a>
+                        <a href="#" target="_blank">arXiv</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider">
+                <h3>Preprints</h3>
+            </div>
+
+            <div class="paper">
+                <a href="#" target="_blank" class="paper-image">
+                    <span>Paper Figure</span>
+                </a>
+                <div class="paper-content">
+                    <h4>Novel Approach to [Research Topic]: Under Review</h4>
+                    <p class="paper-authors">
+                        <strong>Your Name</strong>, Collaborator Name, Another Collaborator
+                    </p>
+                    <p class="paper-venue">
+                        arXiv preprint, Year
+                    </p>
+                    <p class="paper-description">
+                        Summary of the preprint's main contributions and current status. 
+                        Mention where it's under review if applicable.
+                    </p>
+                    <div class="paper-links">
+                        <a href="#" target="_blank">arXiv</a>
+                        <a href="#" target="_blank">Code</a>
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                     </div>
                 </div>
             </div>
@@ -714,6 +868,7 @@
 
             <div class="course">
                 <div class="course-header">
+<<<<<<< HEAD
                     <h4>MT 1001: Introductory Mathematics</h4>
                     <span class="course-term">Fall 2023</span>
                 </div>
@@ -739,26 +894,55 @@
                 </div>
                 <p>
                     This module builds on matrices and linear systems to explore the fundamental structures of linear algebra: vector spaces, linear independence, transformations, and diagonalization, with applications across the mathematical sciences.
+=======
+                    <h4>COURSE 101: Introduction to [Your Field]</h4>
+                    <span class="course-term">Fall 2024</span>
+                </div>
+                <p>
+                    Undergraduate course covering fundamental concepts in [topic]. 
+                    Students learn about [key topics covered] through lectures, 
+                    hands-on projects, and collaborative assignments.
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                 </p>
             </div>
 
             <div class="course">
                 <div class="course-header">
+<<<<<<< HEAD
                     <h4>MT 4113: Computing in Statistics</h4>
                     <span class="course-term">Fall 2023-2025</span>
                 </div>
                 <p>
                     This module builds practical programming skills for statistical analysis. Students learn to write efficient, modular R code for data manipulation, simulation, and investigating statistical procedures.
+=======
+                    <h4>COURSE 502: Advanced Topics in [Research Area]</h4>
+                    <span class="course-term">Spring 2024</span>
+                </div>
+                <p>
+                    Graduate seminar exploring cutting-edge research in [specific area]. 
+                    Topics include [list key topics]. Students complete a research project 
+                    and present their findings to the class.
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                 </p>
             </div>
 
             <div class="course">
                 <div class="course-header">
+<<<<<<< HEAD
                     <h4>Summer Team Enterprise Program Coach</h4>
                     <span class="course-term">Summer 2024</span>
                 </div>
                 <p>
                     Coached a team of undergraduates through exploratory data analysis of oceanographic datasets, from research question formulation to final reporting. Their insights directly contributed to the development of the new module, "The History and Future of Data."
+=======
+                    <h4>COURSE 301: [Intermediate Course Name]</h4>
+                    <span class="course-term">Fall 2023</span>
+                </div>
+                <p>
+                    Upper-level undergraduate course focusing on [specific topics]. 
+                    Emphasizes both theoretical foundations and practical applications 
+                    through programming assignments and group projects.
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                 </p>
             </div>
         </section>
@@ -772,6 +956,7 @@
 
                 <div class="presentation-item">
                     <div class="presentation-title">
+<<<<<<< HEAD
                         Approximate Bayesian Inference For Models in Epidemiology
                     </div>
                     <div class="presentation-event">
@@ -779,11 +964,21 @@
                     </div>
                     <div class="presentation-date">
                         October 2025 • <a href="slides/isi-wsc-2025-presentation-Xiahui.pdf" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">Slides</a>
+=======
+                        Title of Your Conference Talk
+                    </div>
+                    <div class="presentation-event">
+                        International Conference on [Your Field], City, Country
+                    </div>
+                    <div class="presentation-date">
+                        Month Year
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                     </div>
                 </div>
 
                 <div class="presentation-item">
                     <div class="presentation-title">
+<<<<<<< HEAD
                         Approximate Bayesian Inference Using Policy-informed Summary Statistics
                     </div>
                     <div class="presentation-event">
@@ -803,6 +998,27 @@
                     </div>
                     <div class="presentation-date">
                         August 2024 • <a href="https://www.youtube.com/watch?v=cKgXN5nKTV4" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">Video</a>
+=======
+                        Workshop Presentation on [Specific Topic]
+                    </div>
+                    <div class="presentation-event">
+                        Workshop at Major Conference (Abbreviated), City, Country
+                    </div>
+                    <div class="presentation-date">
+                        Month Year
+                    </div>
+                </div>
+
+                <div class="presentation-item">
+                    <div class="presentation-title">
+                        Poster Presentation: [Research Topic]
+                    </div>
+                    <div class="presentation-event">
+                        Annual Symposium on [Field], City, Country
+                    </div>
+                    <div class="presentation-date">
+                        Month Year
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                     </div>
                 </div>
             </div>
@@ -812,6 +1028,7 @@
 
                 <div class="presentation-item">
                     <div class="presentation-title">
+<<<<<<< HEAD
                         Actionable Guidelines for Promoting Equity, Diversity and Inclusion in Infectious Disease Modelling
                     </div>
                     <div class="presentation-event">
@@ -819,11 +1036,21 @@
                     </div>
                     <div class="presentation-date">
                         November 2025 • <a href="slides/JUNIPER EDI Talk.pdf" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">Slides</a>
+=======
+                        [Your Research Topic]: Recent Advances and Future Directions
+                    </div>
+                    <div class="presentation-event">
+                        Department Seminar, University Name, City, State
+                    </div>
+                    <div class="presentation-date">
+                        Month Year
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                     </div>
                 </div>
 
                 <div class="presentation-item">
                     <div class="presentation-title">
+<<<<<<< HEAD
                         A Novel Approximate Bayesian Inference Method for Compartmental Models in Epidemiology Using Stan
                     </div>
                     <div class="presentation-event">
@@ -831,6 +1058,27 @@
                     </div>
                     <div class="presentation-date">
                         January 2025 • <a href="slides/JUNIPER_method_talk.pdf" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">Slides</a>
+=======
+                        Invited Talk at [Institution Name]
+                    </div>
+                    <div class="presentation-event">
+                        Research Group Seminar, Department Name, City, State
+                    </div>
+                    <div class="presentation-date">
+                        Month Year
+                    </div>
+                </div>
+
+                <div class="presentation-item">
+                    <div class="presentation-title">
+                        [Technical Topic] for Industry Applications
+                    </div>
+                    <div class="presentation-event">
+                        Company Name Tech Talk, City, State
+                    </div>
+                    <div class="presentation-date">
+                        Month Year
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                     </div>
                 </div>
             </div>
@@ -841,6 +1089,7 @@
             <h2>Curriculum Vitae</h2>
 
             <div class="cv-section">
+<<<<<<< HEAD
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px; vertical-align: middle; margin-right: 10px;">
                         <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
@@ -858,11 +1107,25 @@
                     <div class="cv-description">
                         Thesis: Approximate Bayesian Inference Using Policy-informed Summary Statistics<br>
                         Supervisors: Dr Ben Swallow and Dr Fergus Chadwick
+=======
+                <h3>Education</h3>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Ph.D. in [Your Field]</span>
+                        <span class="cv-date">Year – Year</span>
+                    </div>
+                    <div class="cv-institution">University Name, City, State</div>
+                    <div class="cv-description">
+                        Dissertation: [Title of Your Dissertation]<br>
+                        Advisor: Professor Name
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                     </div>
                 </div>
 
                 <div class="cv-item">
                     <div class="cv-header">
+<<<<<<< HEAD
                         <span class="cv-title">Master in Statistics</span>
                         <span class="cv-date">2021 – 2022</span>
                     </div>
@@ -871,21 +1134,37 @@
                         Dissertation: A Review on Approximate Bayesian Computation and Its Application in Density Estimation and Model-based Clustering<br>
                         Supervisors: Dr Christopher Fallaize and Dr Riccardo Corradin
                     </div>
+=======
+                        <span class="cv-title">M.S. in [Your Field]</span>
+                        <span class="cv-date">Year – Year</span>
+                    </div>
+                    <div class="cv-institution">University Name, City, State</div>
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                 </div>
 
                 <div class="cv-item">
                     <div class="cv-header">
+<<<<<<< HEAD
                         <span class="cv-title">Bachelor in Statistics</span>
                         <span class="cv-date">2015 – 2019</span>
                     </div>
                     <div class="cv-institution">Queen's University, Kingston, Canada</div>
                     <div class="cv-description">
                         Supervisors: Professor Chunfang Devon Lin and Professor David Pugh
+=======
+                        <span class="cv-title">B.S. in [Your Major]</span>
+                        <span class="cv-date">Year – Year</span>
+                    </div>
+                    <div class="cv-institution">University Name, City, State</div>
+                    <div class="cv-description">
+                        Graduated with Honors | GPA: X.XX
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                     </div>
                 </div>
             </div>
 
             <div class="cv-section">
+<<<<<<< HEAD
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px; vertical-align: middle; margin-right: 10px;">
                         <circle cx="12" cy="12" r="10"></circle>
@@ -946,31 +1225,66 @@
                     </div>
                     <div class="cv-institution">
                         Machine Learning and Statistics Methods Research Group, University of St Andrews
+=======
+                <h3>Research Activities</h3>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Principal Investigator</span>
+                        <span class="cv-date">Year – Present</span>
+                    </div>
+                    <div class="cv-institution">Grant/Project Title | Funding Agency</div>
+                    <div class="cv-description">
+                        Leading research on [topic] with focus on [specific areas]. 
+                        Managing team of graduate students and collaborating with 
+                        [institutions/companies].
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                     </div>
                 </div>
 
                 <div class="cv-item">
                     <div class="cv-header">
+<<<<<<< HEAD
                         <span class="cv-title">Researcher</span>
                         <span class="cv-date">2024 – Present</span>
                     </div>
                     <div class="cv-institution">
                         Joint Universities Pandemic and Epidemiological Research (JUNIPER) Consortium
+=======
+                        <span class="cv-title">Postdoctoral Researcher</span>
+                        <span class="cv-date">Year – Year</span>
+                    </div>
+                    <div class="cv-institution">University/Institute Name, City, State</div>
+                    <div class="cv-description">
+                        Conducted research on [specific topic] under the mentorship of 
+                        Professor Name. Published X papers and presented at Y conferences.
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                     </div>
                 </div>
 
                 <div class="cv-item">
                     <div class="cv-header">
+<<<<<<< HEAD
                         <span class="cv-title">Associate Fellow</span>
                         <span class="cv-date">2024 – Present</span>
                     </div>
                     <div class="cv-institution">
                         Graduate School for Interdisciplinary Studies, University of St Andrews
+=======
+                        <span class="cv-title">Research Assistant</span>
+                        <span class="cv-date">Year – Year</span>
+                    </div>
+                    <div class="cv-institution">University Name, City, State</div>
+                    <div class="cv-description">
+                        Contributed to projects on [topics]. Developed [methods/tools] 
+                        that were used in [number] publications.
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                     </div>
                 </div>
             </div>
 
             <div class="cv-section">
+<<<<<<< HEAD
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px; vertical-align: middle; margin-right: 10px;">
                         <circle cx="12" cy="8" r="7"></circle>
@@ -985,18 +1299,40 @@
                         <span class="cv-date">2025</span>
                     </div>
                     <div class="cv-institution">International Statistical Institute World Statistics Congress</div>
+=======
+                <h3>Professional Affiliations</h3>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Member</span>
+                        <span class="cv-date">Year – Present</span>
+                    </div>
+                    <div class="cv-institution">
+                        [Professional Organization Name] (Acronym)
+                    </div>
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                 </div>
 
                 <div class="cv-item">
                     <div class="cv-header">
+<<<<<<< HEAD
                         <span class="cv-title">St Leonard's College Postgraduate Travel Award</span>
                         <span class="cv-date">2025</span>
                     </div>
                     <div class="cv-institution">University of St Andrews</div>
+=======
+                        <span class="cv-title">Reviewer</span>
+                        <span class="cv-date">Year – Present</span>
+                    </div>
+                    <div class="cv-institution">
+                        Conference Name, Journal Name, Another Journal
+                    </div>
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
                 </div>
 
                 <div class="cv-item">
                     <div class="cv-header">
+<<<<<<< HEAD
                         <span class="cv-title">Durham Summer Grant</span>
                         <span class="cv-date">2024</span>
                     </div>
@@ -1022,6 +1358,63 @@
             </div>
 
             <a href="Academic_CV_Xiahui_Li.pdf" class="download-cv" download>Download Full CV (PDF)</a>
+=======
+                        <span class="cv-title">Program Committee Member</span>
+                        <span class="cv-date">Year</span>
+                    </div>
+                    <div class="cv-institution">
+                        International Conference on [Field] (Abbreviated)
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h3>Honors & Awards</h3>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Outstanding Paper Award</span>
+                        <span class="cv-date">Year</span>
+                    </div>
+                    <div class="cv-institution">Conference Name</div>
+                    <div class="cv-description">
+                        Recognized for exceptional contribution to [specific area]
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Early Career Research Award</span>
+                        <span class="cv-date">Year</span>
+                    </div>
+                    <div class="cv-institution">Organization/Foundation Name</div>
+                    <div class="cv-description">
+                        Awarded for innovative research in [field] | Amount: $XX,XXX
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Graduate Fellowship</span>
+                        <span class="cv-date">Year – Year</span>
+                    </div>
+                    <div class="cv-institution">University Name | Fellowship Name</div>
+                    <div class="cv-description">
+                        Competitive fellowship supporting doctoral research
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Best Teaching Assistant Award</span>
+                        <span class="cv-date">Year</span>
+                    </div>
+                    <div class="cv-institution">Department Name, University Name</div>
+                </div>
+            </div>
+
+            <a href="#" class="download-cv" download>Download Full CV (PDF)</a>
+>>>>>>> 6be76da6bbb44ed73890ea0833a4cc6a3e44f364
         </section>
     </div>
 
