@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xiahui Li - Academic Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ===================================
+           CSS VARIABLES
+           =================================== */
+        :root {
+            --primary-bg: #fafaf9;
+            --secondary-bg: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #525252;
+            --accent: #0f172a;
+            --border: #e5e5e5;
+            --hover: #f5f5f4;
+        }
+
+        /* ===================================
+           RESET & BASE STYLES
+           =================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* ===================================
+           TYPOGRAPHY
+           =================================== */
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            max-width: 800px;
+        }
+
+        /* ===================================
+           ANIMATIONS
+           =================================== */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===================================
+           NAVIGATION
+           =================================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 250, 249, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+            padding: 1.5rem 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ===================================
+           LAYOUT
+           =================================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+
+        section {
+            margin-bottom: 8rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
+
+        /* ===================================
+           ABOUT SECTION
+           =================================== */
+        #about {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .profile-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, #e5e5e5 0%, #d4d4d4 100%);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-content h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .social-icons a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--secondary-bg);
+        }
+
+        .social-icons a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .social-icons svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ===================================
+           PUBLICATIONS SECTION
+           =================================== */
+        .paper {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            transition: transform 0.3s ease;
+        }
+
+        .paper:last-child {
+            border-bottom: none;
+        }
+
+        .paper:hover {
+            transform: translateX(5px);
+        }
+
+        .paper-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #f5f5f4 0%, #e5e5e5 100%);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            display: block;
+        }
+
+        .paper-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .paper-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.3s ease;
+            z-index: 1;
+        }
+
+        .paper-image:hover::before {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .paper-image:hover {
+            transform: scale(1.02);
+        }
+
+        .paper-content h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .paper-authors {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-venue {
+            color: var(--text-primary);
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .paper-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .paper-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .paper-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .paper-links a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        /* ===================================
+           TEACHING SECTION
+           =================================== */
+        .course {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: var(--secondary-bg);
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .course:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-color: var(--accent);
+        }
+
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+        }
+
+        .course-term {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* ===================================
+           PRESENTATIONS SECTION
+           =================================== */
+        .presentation-category {
+            margin-bottom: 3rem;
+        }
+
+        .presentation-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .presentation-item {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border);
+            transition: border-color 0.3s ease;
+        }
+
+        .presentation-item:hover {
+            border-left-color: var(--accent);
+        }
+
+        .presentation-title {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .presentation-event {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .presentation-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .presentation-date a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+        }
+
+        /* ===================================
+           CV SECTION
+           =================================== */
+        .cv-section {
+            margin-bottom: 3rem;
+        }
+
+        .cv-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .cv-section h3 svg {
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+        }
+
+        .cv-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cv-item:last-child {
+            border-bottom: none;
+        }
+
+        .cv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-title {
+            font-weight: 500;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+        }
+
+        .cv-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .cv-institution {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .cv-description ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .cv-description li {
+            margin-bottom: 0.25rem;
+        }
+
+        .download-cv {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 2rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .download-cv:hover {
+            background: var(--text-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ===================================
+           RESPONSIVE DESIGN
+           =================================== */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            #about {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .paper {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .paper-image {
+                max-width: 300px;
+            }
+
+            .cv-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+            <li><a href="#presentations">Presentations</a></li>
+            <li><a href="#cv">CV</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- ===================================
+             ABOUT SECTION
+             =================================== -->
+        <section id="about">
+            <div class="profile-image">
+                <img src="figures/body.jpg" alt="Xiahui Li">
+            </div>
+            <div class="about-content">
+                <h1>Xiahui Li</h1>
+                <p class="title">Ph.D. Candidate in Statistics | University of St Andrews</p>
+                <p>
+                    I am a PhD candidate in the School of Mathematics and Statistics at the University of St Andrews. I hold a Master's degree in Statistics from the University of Nottingham and a Bachelor's degree in Statistics from Queen's University, Canada. My research focuses on advancing approximate Bayesian inference methods and their applications in epidemiology and ecology.
+                </p>
+                <p>
+                    My work addresses the computational challenges inherent in likelihood-free inference for complex dynamic systems. My research interests include computational statistics, Bayesian inference, epidemiological modeling, and statistical methodology for complex stochastic systems.
+                </p>
+                <div class="social-icons">
+                    <a href="mailto:xl94@st-andrews.ac.uk" title="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=g8hGKP0AAAAJ&hl=en" target="_blank" title="Google Scholar">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/xiahui-li-868816138" target="_blank" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/XiahuiLi-ab" target="_blank" title="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================
+             PUBLICATIONS SECTION
+             =================================== -->
+        <section id="publications">
+            <h2>Publications</h2>
+
+            <!-- Paper 1 -->
+            <div class="paper">
+                <a href="https://doi.org/10.1016/j.epidem.2025.100855" target="_blank" class="paper-image">
+                    <img src="figures/Review figure.jpg" alt="Review paper figure">
+                </a>
+                <div class="paper-content">
+                    <h4>Advances in Approximate Bayesian Inference for Models in Epidemiology</h4>
+                    <p class="paper-authors">
+                        <strong>Xiahui Li</strong>, Fergus Chadwick, Ben Swallow
+                    </p>
+                    <p class="paper-venue">Epidemics, 2025</p>
+                    <p class="paper-description">
+                        This review synthesizes recent advances in approximate Bayesian methods that prioritize both computational efficiency and inferential accuracy. We evaluate four key families—Approximate Bayesian Computation, Bayesian Synthetic Likelihood, Integrated Nested Laplace Approximation, and Variational Inference—and provide practical guidance for their application in epidemiology.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Paper 2 -->
+            <div class="paper">
+                <a href="https://doi.org/10.5281/zenodo.16790419" target="_blank" class="paper-image">
+                    <img src="figures/EDI figure.png" alt="EDI paper figure">
+                </a>
+                <div class="paper-content">
+                    <h4>Actionable Guidelines for Promoting Equity, Diversity and Inclusion in Infectious Disease Modelling</h4>
+                    <p class="paper-authors">
+                        <strong>Xiahui Li</strong>, Dongni Zhang, Hannah Clapham, Louise Dyson, T. Deirdre Hollingsworth, Kathy Leung, Denis Mollison, Wirichada Panngum, Ben Swallow, Cecile Tran-Kim, Jack Woodruff, Robin N. Thompson, Shweta Bansal
+                    </p>
+                    <p class="paper-venue">Epidemics, 2025</p>
+                    <p class="paper-description">
+                        This paper identifies key challenges of promoting EDI in IDD community and proposes actionable guidelines to foster inclusivity, collaboration and innovation in the field. Unlike generic EDI guidelines, we provide context-specific recommendations for three key settings in infectious disease research: team dynamics, conferences and virtual collaborations.
+                    </p>
+                    <div class="paper-links">
+                        <a href="https://doi.org/10.5281/zenodo.16790419" target="_blank">arXiv</a>
+                        <a href="https://github.com/XiahuiLi-ab/edi-idd-posters.git" target="_blank">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paper 3 -->
+            <div class="paper">
+                <a href="#" target="_blank" class="paper-image">
+                    <img src="figures/Control figure.png" alt="Controllability paper figure">
+                </a>
+                <div class="paper-content">
+                    <h4>Infectious Disease Outbreak Controllability: Biological, Social and Public Health Factors</h4>
+                    <p class="paper-authors">
+                        Robin N. Thompson, Shweta Bansal, Hannah Clapham, Louise Dyson, Maria Gutierrez, Hans Heesterbeek, T. Deirdre Hollingsworth, Thomas House, Emily Howerton, Valerie Isham, Justin Lessler, Kathy Leung, <strong>Xiahui Li</strong>, Emma McBryde, James McCaw, Denis Mollison, Wirichada Panngum, Kris Parag, Lorenzo Pellis, Francesca Scarabel, Ben Swallow, SM Thumbi, Cecile Tran-Kiem, Cecile Viboud, Michael Plank
+                    </p>
+                    <p class="paper-venue">Proceedings of The Royal Society B, 2025</p>
+                    <p class="paper-description">
+                        This work identifies and categorizes the critical factors affecting outbreak control. We provide a structured framework, analyzing elements related to the pathogen, host population, and available interventions to guide policy assessment.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Paper 4 -->
+            <div class="paper">
+                <a href="https://doi.org/10.48550/arXiv.2408.03415" target="_blank" class="paper-image">
+                    <img src="figures/Method figure.png" alt="Method paper figure">
+                </a>
+                <div class="paper-content">
+                    <h4>A Novel Approximate Bayesian Inference Method for Compartmental Models in Epidemiology using Stan</h4>
+                    <p class="paper-authors">
+                        <strong>Xiahui Li</strong>, Fergus Chadwick, Ben Swallow
+                    </p>
+                    <p class="paper-venue">arXiv preprint, 2024</p>
+                    <p class="paper-description">
+                        We develop a method that employs entropy criterion to select the most informative subset of summary statistics, which are then used to construct a synthetic likelihood for posterior sampling. Posterior sampling is performed using Hamiltonian Monte Carlo as implemented in the Stan software.
+                    </p>
+                    <div class="paper-links">
+                        <a href="https://doi.org/10.48550/arXiv.2408.03415" target="_blank">arXiv</a>
+                        <a href="https://github.com/XiahuiLi-ab/HybridBayes.git" target="_blank">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paper 5 -->
+            <div class="paper">
+                <a href="https://github.com/XiahuiLi-ab/infectious-disease-modelling-with-multiple-datasources.git" target="_blank" class="paper-image">
+                    <img src="figures/Cirm figure.png" alt="Workflow paper figure">
+                </a>
+                <div class="paper-content">
+                    <h4>A Workflow for Infectious Disease Modelling</h4>
+                    <p class="paper-authors">
+                        Sam Abbott, <strong>Xiahui Li</strong>, Punya Alahakoon, Dhorasso Temfack, Sabine Van Elsland, Johannes Bracher, Felix Gunther, Adrian Lison, James Hay, Oliver Eales, Eben Kenah, James McCaw, Mircea T. Sofonea, Pierre Nouvellet, Freya Shearer, Sebastian Funk, Daniela De Angelis, Michael J. Plank, Anne Cori, Anne M. Presanis
+                    </p>
+                    <p class="paper-venue">arXiv preprint, 2025</p>
+                    <p class="paper-description">
+                        We suggest a workflow for developing and evaluating infectious disease models, building on general Bayesian workflow advice and focusing on domain-specific challenges. This workflow is designed for anyone developing an infectious disease model, and for users of model outputs who need to be able to evaluate modelling studies.
+                    </p>
+                    <div class="paper-links">
+                        <a href="https://github.com/XiahuiLi-ab/infectious-disease-modelling-with-multiple-datasources.git" target="_blank">arXiv</a>
+                        <a href="https://github.com/XiahuiLi-ab/infectious-disease-modelling-with-multiple-datasources.git" target="_blank">Code</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================
+             TEACHING SECTION
+             =================================== -->
+        <section id="teaching">
+            <h2>Teaching</h2>
+
+            <div class="course">
+                <div class="course-header">
+                    <h4>MT 1001: Introductory Mathematics</h4>
+                    <span class="course-term">Fall 2023</span>
+                </div>
+                <p>
+                    This module provides a rigorous foundation in single-variable calculus, including limits, derivatives, and integrals. The focus is on building the mathematical skills necessary to model and solve problems in physics, engineering, and other scientific disciplines.
+                </p>
+            </div>
+
+            <div class="course">
+                <div class="course-header">
+                    <h4>MT 2508: Statistical Inference</h4>
+                    <span class="course-term">Spring 2024-2025</span>
+                </div>
+                <p>
+                    This module explores how we use probability models to quantify uncertainty and make inferences from data. Students learn key statistical methods, including maximum likelihood estimation, confidence intervals, hypothesis testing, and linear regression, forming the essential foundation for advanced statistical study.
+                </p>
+            </div>
+
+            <div class="course">
+                <div class="course-header">
+                    <h4>MT 2501: Linear Mathematics</h4>
+                    <span class="course-term">Fall 2024</span>
+                </div>
+                <p>
+                    This module builds on matrices and linear systems to explore the fundamental structures of linear algebra: vector spaces, linear independence, transformations, and diagonalization, with applications across the mathematical sciences.
+                </p>
+            </div>
+
+            <div class="course">
+                <div class="course-header">
+                    <h4>MT 4113: Computing in Statistics</h4>
+                    <span class="course-term">Fall 2023-2025</span>
+                </div>
+                <p>
+                    This module builds practical programming skills for statistical analysis. Students learn to write efficient, modular R code for data manipulation, simulation, and investigating statistical procedures.
+                </p>
+            </div>
+
+            <div class="course">
+                <div class="course-header">
+                    <h4>Summer Team Enterprise Program Coach</h4>
+                    <span class="course-term">Summer 2024</span>
+                </div>
+                <p>
+                    Coached a team of undergraduates through exploratory data analysis of oceanographic datasets, from research question formulation to final reporting. Their insights directly contributed to the development of the new module, "The History and Future of Data."
+                </p>
+            </div>
+        </section>
+
+        <!-- ===================================
+             PRESENTATIONS SECTION
+             =================================== -->
+        <section id="presentations">
+            <h2>Presentations</h2>
+
+            <div class="presentation-category">
+                <h3>Conference & Workshop Talks</h3>
+
+                <div class="presentation-item">
+                    <div class="presentation-title">
+                        Approximate Bayesian Inference For Models in Epidemiology
+                    </div>
+                    <div class="presentation-event">
+                        International Statistical Institute World Statistics Congress, The Hague, Netherlands
+                    </div>
+                    <div class="presentation-date">
+                        October 2025 • <a href="slides/isi-wsc-2025-presentation-Xiahui.pdf" target="_blank">Slides</a>
+                    </div>
+                </div>
+
+                <div class="presentation-item">
+                    <div class="presentation-title">
+                        Approximate Bayesian Inference Using Policy-informed Summary Statistics
+                    </div>
+                    <div class="presentation-event">
+                        International Center for Mathematical Sciences, Edinburgh, UK
+                    </div>
+                    <div class="presentation-date">October 2024</div>
+                </div>
+
+                <div class="presentation-item">
+                    <div class="presentation-title">
+                        A Novel Approximate Bayesian Inference Method for Compartmental Models in Epidemiology Using Stan
+                    </div>
+                    <div class="presentation-event">
+                        Isaac Newton Institute for Mathematical Sciences, Cambridge, UK
+                    </div>
+                    <div class="presentation-date">
+                        August 2024 • <a href="https://www.youtube.com/watch?v=cKgXN5nKTV4" target="_blank">Video</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="presentation-category">
+                <h3>Invited Seminars</h3>
+
+                <div class="presentation-item">
+                    <div class="presentation-title">
+                        Actionable Guidelines for Promoting Equity, Diversity and Inclusion in Infectious Disease Modelling
+                    </div>
+                    <div class="presentation-event">
+                        JUNIPER Virtual Seminar Series
+                    </div>
+                    <div class="presentation-date">
+                        November 2025 • <a href="slides/JUNIPER EDI Talk.pdf" target="_blank">Slides</a>
+                    </div>
+                </div>
+
+                <div class="presentation-item">
+                    <div class="presentation-title">
+                        A Novel Approximate Bayesian Inference Method for Compartmental Models in Epidemiology Using Stan
+                    </div>
+                    <div class="presentation-event">
+                        JUNIPER Virtual Seminar Series
+                    </div>
+                    <div class="presentation-date">
+                        January 2025 • <a href="slides/JUNIPER_method_talk.pdf" target="_blank">Slides</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================
+             CV SECTION
+             =================================== -->
+        <section id="cv">
+            <h2>Curriculum Vitae</h2>
+
+            <div class="cv-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                    Education
+                </h3>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Ph.D. in Statistics</span>
+                        <span class="cv-date">2023 – Present</span>
+                    </div>
+                    <div class="cv-institution">University of St Andrews, St Andrews, UK</div>
+                    <div class="cv-description">
+                        Thesis: Approximate Bayesian Inference Using Policy-informed Summary Statistics<br>
+                        Supervisors: Dr Ben Swallow and Dr Fergus Chadwick
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Master in Statistics</span>
+                        <span class="cv-date">2021 – 2022</span>
+                    </div>
+                    <div class="cv-institution">University of Nottingham, Nottingham, UK</div>
+                    <div class="cv-description">
+                        Dissertation: A Review on Approximate Bayesian Computation and Its Application in Density Estimation and Model-based Clustering<br>
+                        Supervisors: Dr Christopher Fallaize and Dr Riccardo Corradin
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Bachelor in Statistics</span>
+                        <span class="cv-date">2015 – 2019</span>
+                    </div>
+                    <div class="cv-institution">Queen's University, Kingston, Canada</div>
+                    <div class="cv-description">
+                        Supervisors: Professor Chunfang Devon Lin and Professor David Pugh
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    Research Activities
+                </h3>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">World Statistics Congress</span>
+                        <span class="cv-date">October 2025</span>
+                    </div>
+                    <div class="cv-institution">International Statistical Institute, The Hague, Netherlands</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">International Workshop on Analysis and Modelling for the Design of Future Epidemic Surveillance Systems</span>
+                        <span class="cv-date">April 2025</span>
+                    </div>
+                    <div class="cv-institution">Centre International De Rencontres Mathématiques, Marseille, France</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Workshop on Mathematical Models for Twenty-First Century Decisions</span>
+                        <span class="cv-date">October 2024</span>
+                    </div>
+                    <div class="cv-institution">International Center for Mathematical Sciences, Edinburgh, UK</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">International Programme on Modeling and Inference for Pandemic Preparedness</span>
+                        <span class="cv-date">August 2024</span>
+                    </div>
+                    <div class="cv-institution">Isaac Newton Institute, Cambridge, UK</div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    Professional Affiliations
+                </h3>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">PhD Student Researcher</span>
+                        <span class="cv-date">2023 – Present</span>
+                    </div>
+                    <div class="cv-institution">
+                        Machine Learning and Statistics Methods Research Group, University of St Andrews
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Researcher</span>
+                        <span class="cv-date">2024 – Present</span>
+                    </div>
+                    <div class="cv-institution">
+                        Joint Universities Pandemic and Epidemiological Research (JUNIPER) Consortium
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Associate Fellow</span>
+                        <span class="cv-date">2024 – Present</span>
+                    </div>
+                    <div class="cv-institution">
+                        Graduate School for Interdisciplinary Studies, University of St Andrews
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                    Honors & Awards
+                </h3>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Presentation Award</span>
+                        <span class="cv-date">2025</span>
+                    </div>
+                    <div class="cv-institution">International Statistical Institute World Statistics Congress</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">St Leonard's College Postgraduate Travel Award</span>
+                        <span class="cv-date">2025</span>
+                    </div>
+                    <div class="cv-institution">University of St Andrews</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Durham Summer Grant</span>
+                        <span class="cv-date">2024</span>
+                    </div>
+                    <div class="cv-institution">International Workshop on Statistical Modelling</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">PhD Scholarship</span>
+                        <span class="cv-date">2023 – 2027</span>
+                    </div>
+                    <div class="cv-institution">China Scholarship Council and University of St Andrews</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-header">
+                        <span class="cv-title">Nottingham Advantage Award</span>
+                        <span class="cv-date">2021 – 2022</span>
+                    </div>
+                    <div class="cv-institution">University of Nottingham</div>
+                </div>
+            </div>
+
+            <a href="Academic_CV_Xiahui_Li.pdf" class="download-cv" download>Download Full CV (PDF)</a>
+        </section>
+    </div>
+
+    <script>
+        // Smooth scroll with offset for fixed navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 100;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add active state to navigation links on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
